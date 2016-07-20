@@ -1,18 +1,37 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  NavigatorIOS
 } from 'react-native';
 
-class PropertyFinder extends Component {
+import SearchPage from './SearchPage';
+	
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  text: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+
+});
+
+class MyScene extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -31,23 +50,40 @@ class PropertyFinder extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+class PropertyFinder extends Component {
+  render() {
+    return (
+      <NavigatorIOS style={styles.container}
+        initialRoute={{
+          title: 'Property Finder',
+          component: SearchPage,
+        }}/>
+    );
+  }
+}
 
 AppRegistry.registerComponent('PropertyFinder', () => PropertyFinder);
+
+
+/*
+'use strict';
+
+var React = require('react-native');
+var styles = React.StyleSheet.create({
+  text: {
+    color: 'black',
+    backgroundColor: 'white',
+    fontSize: 30,
+    margin: 80
+  }
+});
+
+class PropertyFinderApp extends React.Component {
+  render() {
+    return React.createElement(React.Text, {style: styles.text}, "Hello World!");
+  }
+}
+
+React.AppRegistry.registerComponent('PropertyFinder', function() { return PropertyFinderApp });
+
+*/
