@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import SearchPage from './js/SearchPage';
+
 import {
   AppRegistry,
   StyleSheet,
@@ -6,8 +8,6 @@ import {
   View,
   NavigatorIOS
 } from 'react-native';
-
-import SearchPage from './js/SearchPage';
 	
 const styles = StyleSheet.create({
   container: {
